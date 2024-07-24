@@ -31,15 +31,18 @@ class PostItem extends StatelessWidget {
               ),
             ],
           ),
+          if (post.image != null) ...[
+            const SizedBox(
+              height: 12,
+            ),
+            Image.network('${AppConfig.baseUrl}/resources/${post.image}'),
+          ],
           const SizedBox(
             height: 12,
           ),
-          Image.network('${AppConfig.baseUrl}/resources/${post.image}'),
-          const SizedBox(
-            height: 12,
-          ),
-          const Text(
-            'The sun is also reminder that we can rise again after darkness it comes brightness. We have to always keep it in mind.',
+          Text(
+            "${post.message} ",
+            //        'The sun is also reminder that we can rise again after darkness it comes brightness. We have to always keep it in mind.',
             style: AppText.subtitle3,
           ),
         ],
